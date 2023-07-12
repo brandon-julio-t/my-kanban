@@ -1,4 +1,4 @@
-import React, { ComponentProps, ComponentType } from 'react';
+import { ComponentProps, ComponentType } from 'react';
 
 const Container: ComponentType<ComponentProps<'div'>> = ({ children, ...rest }) => {
   return (

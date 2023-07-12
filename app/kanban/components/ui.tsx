@@ -1,8 +1,9 @@
 import Card from '@/components/common/Card';
 import Container from '@/components/common/Container';
 import { Task } from '@prisma/client';
-import React, { ComponentProps, ComponentType } from 'react';
+import { ComponentType } from 'react';
 import KanbanTaskItem from './kanban-task-item';
+import CardTitle from '@/components/common/CardTitle';
 
 interface IKanbanPageUI {
   tasks: Task[];
@@ -18,12 +19,12 @@ const KanbanPageUI: ComponentType<IKanbanPageUI> = ({ tasks }) => {
 
         <div className="flex flex-wrap gap-4">
           {statusNameMappings.map((statusName, index) => (
-            <Card key={statusName} className='flex-1'>
-              <Card.Title>
+            <Card key={statusName} className="flex-1">
+              <CardTitle>
                 <span className="text-lg font-medium">{statusName}</span>
-              </Card.Title>
+              </CardTitle>
 
-              <div className='flex flex-col gap-2'>
+              <div className="flex flex-col gap-2">
                 {tasks
                   .filter(task => task.status === index)
                   .map(task => (
