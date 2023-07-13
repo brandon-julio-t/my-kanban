@@ -4,6 +4,7 @@ import { Task } from '@prisma/client';
 import { ComponentType } from 'react';
 import KanbanTaskItem from './KanbanTaskItem';
 import CardTitle from '@/components/common/CardTitle';
+import KanbanCreateButton from './KanbanCreateButton';
 
 interface IKanbanPageUI {
   tasks: Task[];
@@ -14,10 +15,14 @@ const KanbanPageUI: ComponentType<IKanbanPageUI> = ({ tasks }) => {
 
   return (
     <Container>
-      <main className="my-16">
-        <h2 className="text-xl font-bold mb-8">Kanban Boards</h2>
+      <main className="my-16 flex flex-col gap-4">
+        <h2 className="text-xl font-bold">Kanban Boards</h2>
 
-        <div className="flex flex-wrap gap-4">
+        <section>
+          <KanbanCreateButton />
+        </section>
+
+        <section className="flex flex-wrap gap-4">
           {statusNameMappings.map((statusName, index) => (
             <Card key={statusName} className="flex-1">
               <CardTitle>
@@ -33,7 +38,7 @@ const KanbanPageUI: ComponentType<IKanbanPageUI> = ({ tasks }) => {
               </div>
             </Card>
           ))}
-        </div>
+        </section>
       </main>
     </Container>
   );
