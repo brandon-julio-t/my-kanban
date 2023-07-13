@@ -6,7 +6,7 @@ import CardAction from '@/components/common/CardAction';
 import { Task } from '@prisma/client';
 import { useRouter } from 'next/navigation';
 import { ComponentType, useRef } from 'react';
-import KanbanTaskDetail from './kanban-task-detail';
+import KanbanTaskDetail from './KanbanTaskDetail';
 
 interface IKanbanTaskItem {
   task: Task;

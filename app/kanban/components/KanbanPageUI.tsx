@@ -2,7 +2,7 @@ import Card from '@/components/common/Card';
 import Container from '@/components/common/Container';
 import { Task } from '@prisma/client';
 import { ComponentType } from 'react';
-import KanbanTaskItem from './kanban-task-item';
+import KanbanTaskItem from './KanbanTaskItem';
 import CardTitle from '@/components/common/CardTitle';
 
 interface IKanbanPageUI {
